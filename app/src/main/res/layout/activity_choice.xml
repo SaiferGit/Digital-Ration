@@ -1,9 +1,103 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ChoiceActivity">
+    tools:context=".ChoiceActivity"
+    android:background="@color/shada">
 
-</android.support.constraint.ConstraintLayout>
+    <ImageView
+        android:id="@+id/choice_imageView"
+        android:layout_width="match_parent"
+        android:layout_height="140dp"
+        android:src="@drawable/digital_ration"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="0dp"
+        android:layout_alignParentTop="true"/>
+    <TextView
+        android:id="@+id/choice_textView"
+        android:layout_below="@+id/choice_imageView"
+        android:layout_marginTop="22dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="আপনি কী হিসেবে লগইন করতে চান?"
+        android:textSize="30dp"
+        android:layout_marginLeft="10dp"
+        android:textStyle="bold"/>
+    <RadioGroup
+        android:id="@+id/choice_radio_group"
+        android:layout_below="@+id/choice_textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="20dp">
+
+        <RadioButton
+            android:id="@+id/choice_administrator"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="এডমিনিস্ট্রেটর"
+            android:textSize="22dp"/>
+
+        <RadioButton
+            android:id="@+id/choice_dealer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ডিলার"
+            android:textSize="22dp"/>
+
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/choice_enter_button"
+        android:layout_width="262dp"
+        android:layout_height="50dp"
+        android:layout_below="@+id/choice_radio_group"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="30dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/rounded_corners"
+        android:text="প্রবেশ করুন "
+        android:textColor="@color/shada"
+        android:textSize="20dp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/choice_login_edit_text"
+        android:layout_width="357dp"
+        android:layout_height="64dp"
+        android:layout_below="@+id/choice_enter_button"
+        android:layout_alignParentStart="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="-4dp"
+        android:text="ডিলার আইডি নেই, নতুন ডিলার হতে চান?"
+        android:textColor="@color/Black"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:gravity="center"/>
+
+    <Button
+    android:id="@+id/choice_register_button"
+    android:layout_width="262dp"
+    android:layout_height="50dp"
+    android:layout_below="@+id/choice_login_edit_text"
+    android:layout_centerHorizontal="true"
+    android:layout_marginStart="30dp"
+    android:layout_marginLeft="30dp"
+    android:layout_marginTop="30dp"
+    android:layout_marginEnd="30dp"
+    android:layout_marginRight="30dp"
+    android:layout_marginBottom="10dp"
+    android:background="@drawable/rounded_corners"
+    android:text="নিবন্ধন করুন "
+    android:textColor="@color/shada"
+    android:textSize="20dp"
+    android:textStyle="bold" />
+
+</RelativeLayout>

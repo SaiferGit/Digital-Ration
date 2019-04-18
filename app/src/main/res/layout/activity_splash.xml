@@ -21,7 +21,7 @@
         android:id="@+id/splash_textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" 
-        android:text="ডিগিটাল রেশনে আপনাকে স্বাগতম"
+        android:text="ডিজিটাল রেশনে আপনাকে স্বাগতম"
         android:layout_below="@+id/imageView2"
         android:textSize="30dp"
         android:gravity="center"
