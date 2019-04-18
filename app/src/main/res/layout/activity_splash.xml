@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SplashActivity"
+    android:background="@color/shada">
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="262dp"
+        android:layout_height="273dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        app:srcCompat="@drawable/logo" />
+    
+
+    <TextView
+        android:id="@+id/splash_textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" 
+        android:text="ডিগিটাল রেশনে আপনাকে স্বাগতম"
+        android:layout_below="@+id/imageView2"
+        android:textSize="30dp"
+        android:gravity="center"
+        android:layout_marginTop="30dp"/>
+
+    <Button
+        android:id="@+id/splash_login_button"
+        android:layout_width="262dp"
+        android:layout_height="50dp"
+        android:layout_below="@+id/splash_textView"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="30dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="110dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/rounded_corners"
+        android:text="প্রবেশ করুন "
+        android:textColor="@color/shada"
+        android:textSize="20dp"
+        android:textStyle="bold" />
+
+</RelativeLayout>
