@@ -32,31 +32,50 @@
         android:textStyle="bold" />
 
     <EditText
-        android:id="@+id/dealer_login_pin"
-        android:layout_width="150dp"
+        android:id="@+id/dealer_login_mail"
+
+        android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_below="@+id/user_login_uporer_chobi"
-        android:layout_centerHorizontal="true"
         android:layout_marginLeft="20dp"
-        android:layout_marginTop="115dp"
+        android:layout_marginTop="70dp"
         android:layout_marginRight="20dp"
         android:background="@drawable/edit_text_bg"
-        android:drawableLeft="@drawable/key"
+        android:drawableLeft="@drawable/launcher_email"
         android:ems="10"
-        android:hint="Dealer pin"
+        android:hint="E-mail"
         android:inputType="textEmailAddress"
         android:padding="10dp" />
 
+    <EditText
+        android:id="@+id/dealer_login_pass"
+        android:layout_width="345dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/dealer_login_mail"
+        android:layout_alignStart="@+id/dealer_login_mail"
+        android:layout_alignEnd="@+id/dealer_login_mail"
+        android:layout_marginStart="0dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="-1dp"
+        android:layout_marginRight="12dp"
+        android:layout_marginBottom="12dp"
+        android:background="@drawable/edit_text_bg"
+        android:drawableLeft="@drawable/launcher_password"
+        android:ems="10"
+        android:hint="Password"
+        android:inputType="textPassword"
+        android:padding="10dp" />
 
     <Button
-        android:id="@+id/user_login_button"
-        android:layout_width="197dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/dealer_login_pin"
+        android:id="@+id/dealer_login_button"
+        android:layout_width="262dp"
+        android:layout_height="50dp"
+        android:layout_below="@+id/dealer_login_pass"
         android:layout_centerHorizontal="true"
         android:layout_marginStart="30dp"
         android:layout_marginLeft="30dp"
-        android:layout_marginTop="27dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="30dp"
         android:layout_marginRight="30dp"
         android:layout_marginBottom="10dp"
@@ -65,7 +84,6 @@
         android:textColor="@color/shada"
         android:textSize="20dp"
         android:textStyle="bold" />
-
 
 
 </RelativeLayout>
