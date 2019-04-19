@@ -6,6 +6,9 @@
     android:layout_height="match_parent"
     tools:context=".DealerMainActivity">
 
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar"/>
     <ImageView
         android:id="@+id/dealer_main_image"
         android:layout_width="200dp"

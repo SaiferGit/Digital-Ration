@@ -6,13 +6,17 @@
     android:layout_height="match_parent"
     tools:context=".DealerCardOptions">
 
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar"/>
+
     <EditText
         android:id="@+id/user_login_mail"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_below="@+id/user_login_uporer_chobi"
         android:layout_marginLeft="20dp"
-        android:layout_marginTop="256dp"
+        android:layout_marginTop="235dp"
         android:layout_marginRight="20dp"
         android:background="@drawable/edit_text_bg"
         android:ems="10"

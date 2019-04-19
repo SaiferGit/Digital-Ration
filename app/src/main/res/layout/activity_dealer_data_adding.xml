@@ -6,6 +6,10 @@
     android:layout_height="match_parent"
     tools:context=".DealerDataAddingActivity">
 
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar"/>
+
     <Button
         android:id="@+id/dealer_data_adding_button"
         android:layout_width="262dp"
