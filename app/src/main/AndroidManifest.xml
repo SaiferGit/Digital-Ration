@@ -9,7 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ChoiceActivity"></activity>
+        <activity android:name=".DealerLoginActivity"></activity>
+        <activity android:name=".AdminLoginActivity" />
+        <activity android:name=".DealerRegisterActivity" />
+        <activity android:name=".ChoiceActivity" />
         <activity android:name=".SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

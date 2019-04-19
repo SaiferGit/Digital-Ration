@@ -8,24 +8,32 @@ import android.widget.Button;
 
 public class SplashActivity extends AppCompatActivity {
 
-    private Button login;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
 
-        login = (Button) findViewById(R.id.splash_login_button);
-
-        login.setOnClickListener(new View.OnClickListener() {
+        Thread thread = new Thread(){
             @Override
-            public void onClick(View v) {
-                sendUserToChoiceActivity();
+            public void run() {
+                try{
+                    sleep(5000);
+                }
+                catch(Exception e){
+                    e.printStackTrace();
+                }
+                finally {
+                    Intent welcomeIntent = new Intent(SplashActivity.this, ChoiceActivity.class);
+                    startActivity(welcomeIntent);
+                }
             }
-        });
+        };
+        thread.start();
     }
 
-    private void sendUserToChoiceActivity() {
-        Intent choiceIntent = new Intent(SplashActivity.this, ChoiceActivity.class);
-        startActivity(choiceIntent);
+    @Override
+    protected void onPause() {
+        super.onPause();
+        finish();
     }
 }
