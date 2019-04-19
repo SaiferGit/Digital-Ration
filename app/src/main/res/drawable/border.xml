@@ -5,8 +5,8 @@
     <solid android:color="@color/shada"></solid>
 
     <stroke
-        android:color="@color/tomato"
-        android:width="2dp">
+        android:color="@color/colorAccent"
+        android:width="3dp">
 
     </stroke>
     <corners android:radius="10dp" />

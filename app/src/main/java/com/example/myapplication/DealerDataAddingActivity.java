@@ -33,6 +33,9 @@ public class DealerDataAddingActivity extends AppCompatActivity {
     private EditText UserName, FullName, Address, PhoneNo;
     private Button UpdateProfileButton;
 
+    private EditText UserName1, FullName1, Address1, PhoneNo1;
+    private Button UpdateSellButton;
+
     private FirebaseAuth mAuth;
     private DatabaseReference RootRef;
     private FirebaseStorage firebaseStorage;
@@ -44,7 +47,7 @@ public class DealerDataAddingActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dealer_data_adding);
 
-        add = (Button) findViewById(R.id.dealer_data_adding_button);
+
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -55,7 +58,20 @@ public class DealerDataAddingActivity extends AppCompatActivity {
         FullName = findViewById(R.id.profile_fullname);
         Address = findViewById(R.id.profile_address);
         PhoneNo = findViewById(R.id.profile_phone);
+        UpdateSellButton = findViewById(R.id.profile_sell_button);
+
+
+        UserName1 = findViewById(R.id.profile_username1);
+        FullName1 = findViewById(R.id.profile_fullname1);
+        Address1 = findViewById(R.id.profile_address1);
+        PhoneNo1 = findViewById(R.id.profile_phone1);
         UpdateProfileButton = findViewById(R.id.profile_update_button);
+
+        UserName1.setVisibility(View.GONE);
+        FullName1.setVisibility(View.GONE);
+        Address1.setVisibility(View.GONE);
+        PhoneNo1.setVisibility(View.GONE);
+        UpdateProfileButton.setVisibility(View.GONE);
 
         mAuth = FirebaseAuth.getInstance();
         CurrentUserID = mAuth.getCurrentUser().getUid();
@@ -68,6 +84,8 @@ public class DealerDataAddingActivity extends AppCompatActivity {
                         if (dataSnapshot.exists()) {
                             if (dataSnapshot.hasChild("Rice")) {
                                 String retrieveUserName = (String) dataSnapshot.child("Rice").getValue();
+                                int temp = Integer.parseInt(retrieveUserName);
+                                //int temp1 = Integer.parseInt(UserName1.getText().toString());
                                 UserName.setText(retrieveUserName);
 
                             }
@@ -120,6 +138,19 @@ public class DealerDataAddingActivity extends AppCompatActivity {
                     }
                 });
 
+        UpdateSellButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                UserName1.setVisibility(View.VISIBLE);
+                FullName1.setVisibility(View.VISIBLE);
+                Address1.setVisibility(View.VISIBLE);
+                PhoneNo1.setVisibility(View.VISIBLE);
+                UpdateProfileButton.setVisibility(View.VISIBLE);
+
+
+            }
+        });
+
         UpdateProfileButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -135,12 +166,31 @@ public class DealerDataAddingActivity extends AppCompatActivity {
         String phone = PhoneNo.getText().toString();
         String address = Address.getText().toString();
 
+        String uname1 = UserName1.getText().toString();
+        String fname1 = FullName1.getText().toString();
+        String phone1 = PhoneNo1.getText().toString();
+        String address1 = Address1.getText().toString();
+
+        int rice_firebase = Integer.parseInt(uname);
+        int rice_sold = Integer.parseInt(uname1);
+
+        int oil_firebase = Integer.parseInt(uname);
+        int oil_sold = Integer.parseInt(uname1);
+
+        int suger_firebase = Integer.parseInt(uname);
+        int suger_sold = Integer.parseInt(uname1);
+
+        int salt_firebase = Integer.parseInt(uname);
+        int salt_sold = Integer.parseInt(uname1);
+
         //inserting info into Fdb
         HashMap userMap = new HashMap();
-        userMap.put("Rice",uname);
-        userMap.put("Oil",fname);
-        userMap.put("Suger",phone);
-        userMap.put("Salt",address);
+        userMap.put("Rice",Integer.toString(rice_firebase - rice_sold));
+        userMap.put("Oil",Integer.toString(oil_firebase - oil_sold));
+        userMap.put("Suger",Integer.toString(suger_firebase - suger_sold));
+        userMap.put("Salt",Integer.toString(salt_firebase - salt_sold));
+
+
 
         RootRef.child(CurrentUserID).updateChildren(userMap).addOnCompleteListener(new OnCompleteListener() {
             @Override
@@ -216,6 +266,12 @@ public class DealerDataAddingActivity extends AppCompatActivity {
 
                     }
                 });
+
+
+        UserName1.setText(null);
+        FullName1.setText(null);
+        PhoneNo1.setText(null);
+        Address1.setText(null);
 
     }
 }
