@@ -57,6 +57,16 @@ public class DealerMainActivity extends AppCompatActivity {
         Address = findViewById(R.id.profile_address);
         PhoneNo = findViewById(R.id.profile_phone);
 
+        stat = (Button) findViewById(R.id.dealer_main_statButton);
+
+        stat.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(DealerMainActivity.this, DealerStatistics.class);
+                startActivity(intent);
+            }
+        });
+
 
         //adding navigation view in drawer layout
         drawerLayout = (DrawerLayout) findViewById(R.id.drawerlayout);

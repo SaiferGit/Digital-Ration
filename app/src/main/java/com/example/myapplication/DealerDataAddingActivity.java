@@ -38,6 +38,18 @@ public class DealerDataAddingActivity extends AppCompatActivity {
     private FirebaseAuth mAuth;
     private DatabaseReference RootRef;
 
+    public  int rice_firebase ;
+    int rice_sold ;
+
+    int oil_firebase;
+    int oil_sold;
+
+    int suger_firebase;
+    int suger_sold ;
+
+    int salt_firebase ;
+    int salt_sold;
+
     String CurrentUserID;
 
     @Override
@@ -157,17 +169,17 @@ public class DealerDataAddingActivity extends AppCompatActivity {
         String phone1 = PhoneNo1.getText().toString();
         String address1 = Address1.getText().toString();
 
-        int rice_firebase = Integer.parseInt(uname);
-        int rice_sold = Integer.parseInt(uname1);
+        rice_firebase = Integer.parseInt(uname);
+        rice_sold = Integer.parseInt(uname1);
 
-        int oil_firebase = Integer.parseInt(uname);
-        int oil_sold = Integer.parseInt(uname1);
+        oil_firebase = Integer.parseInt(uname);
+        oil_sold = Integer.parseInt(uname1);
 
-        int suger_firebase = Integer.parseInt(uname);
-        int suger_sold = Integer.parseInt(uname1);
+        suger_firebase = Integer.parseInt(uname);
+        suger_sold = Integer.parseInt(uname1);
 
-        int salt_firebase = Integer.parseInt(uname);
-        int salt_sold = Integer.parseInt(uname1);
+        salt_firebase = Integer.parseInt(uname);
+        salt_sold = Integer.parseInt(uname1);
 
         //inserting info into Fdb
         HashMap userMap = new HashMap();
