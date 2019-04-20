@@ -44,8 +44,8 @@ public class DealerDataAddingActivity extends AppCompatActivity {
     int oil_firebase;
     int oil_sold;
 
-    int suger_firebase;
-    int suger_sold ;
+    int sugar_firebase;
+    int sugar_sold ;
 
     int salt_firebase ;
     int salt_sold;
@@ -151,13 +151,13 @@ public class DealerDataAddingActivity extends AppCompatActivity {
             public void onClick(View v) {
                 updateProfile();
 
-                Intent intent = new Intent(DealerDataAddingActivity.this,DealerMainActivity.class);
-                startActivity(intent);
+
+
             }
         });
     }
 
-    private void updateProfile() {
+     void updateProfile() {
 
         String uname = UserName.getText().toString();
         String fname = FullName.getText().toString();
@@ -170,22 +170,24 @@ public class DealerDataAddingActivity extends AppCompatActivity {
         String address1 = Address1.getText().toString();
 
         rice_firebase = Integer.parseInt(uname);
-        rice_sold = Integer.parseInt(uname1);
 
-        oil_firebase = Integer.parseInt(uname);
-        oil_sold = Integer.parseInt(uname1);
+            rice_sold = Integer.parseInt(uname1);
 
-        suger_firebase = Integer.parseInt(uname);
-        suger_sold = Integer.parseInt(uname1);
 
-        salt_firebase = Integer.parseInt(uname);
-        salt_sold = Integer.parseInt(uname1);
+        oil_firebase = Integer.parseInt(fname);
+        oil_sold = Integer.parseInt(fname1);
+
+        sugar_firebase = Integer.parseInt(phone);
+        sugar_sold = Integer.parseInt(phone1);
+
+        salt_firebase = Integer.parseInt(address);
+        salt_sold = Integer.parseInt(address1);
 
         //inserting info into Fdb
         HashMap userMap = new HashMap();
         userMap.put("Rice",Integer.toString(rice_firebase - rice_sold));
         userMap.put("Oil",Integer.toString(oil_firebase - oil_sold));
-        userMap.put("Suger",Integer.toString(suger_firebase - suger_sold));
+        userMap.put("Suger",Integer.toString(sugar_firebase - sugar_sold));
         userMap.put("Salt",Integer.toString(salt_firebase - salt_sold));
 
 
@@ -266,10 +268,17 @@ public class DealerDataAddingActivity extends AppCompatActivity {
                 });
 
 
+         Intent intent = new Intent(DealerDataAddingActivity.this,DealerMainActivity.class);
+
+
+         startActivity(intent);
+
         UserName1.setText(null);
         FullName1.setText(null);
         PhoneNo1.setText(null);
         Address1.setText(null);
+
+
 
     }
 }

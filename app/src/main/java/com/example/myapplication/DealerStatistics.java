@@ -10,6 +10,7 @@ import java.util.ArrayList;
 
 public class DealerStatistics extends ListActivity {
     boolean isListedBefore = false;
+    String rice=null, oil= null, sugar=null, salt= null;
     int a,b,c;
     //LIST OF ARRAY STRINGS WHICH WILL SERVE AS LIST ITEMS
     ArrayList<String> listItems=new ArrayList<String>();
@@ -28,17 +29,26 @@ public class DealerStatistics extends ListActivity {
                 android.R.layout.simple_list_item_1,
                 listItems);
         setListAdapter(adapter);
+
+        Bundle bundle = getIntent().getExtras();
+
+        rice = bundle.getString("Rice");
+        oil = bundle.getString("Oil");
+        sugar = bundle.getString("Sugar");
+        salt = bundle.getString("Salt");
+
+
     }
 
     //METHOD WHICH WILL HANDLE DYNAMIC INSERTION
     public void addItems(View v) {
         if(isListedBefore == false) {
-            listItems.add("NID      Rice  Oil  Suger  Salt");
-            listItems.add("123456   2kg   1Lit 5kg    1kg");
+            listItems.add("NID      Rice  Oil  Sugar  Salt");
+            listItems.add("123456  " + rice + " Kg   " + oil + " Litre  " + sugar + " Kg   " + salt + " Kg");
             isListedBefore = true;
         }
         else {
-            listItems.add("123456   10  12  20  30");
+            listItems.add("123456  " + rice + " Kg   " + oil + " Litre  " + sugar + " Kg   " + salt + " Kg");
         }
         adapter.notifyDataSetChanged();
     }
