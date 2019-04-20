@@ -31,14 +31,12 @@ public class DealerDataAddingActivity extends AppCompatActivity {
     ImageView imgView;
 
     private EditText UserName, FullName, Address, PhoneNo;
-    private Button UpdateProfileButton;
 
     private EditText UserName1, FullName1, Address1, PhoneNo1;
     private Button UpdateSellButton;
 
     private FirebaseAuth mAuth;
     private DatabaseReference RootRef;
-    private FirebaseStorage firebaseStorage;
 
     String CurrentUserID;
 
@@ -54,24 +52,21 @@ public class DealerDataAddingActivity extends AppCompatActivity {
         getSupportActionBar().setTitle("Data Adding");
 
 
-        UserName = findViewById(R.id.profile_username);
-        FullName = findViewById(R.id.profile_fullname);
-        Address = findViewById(R.id.profile_address);
-        PhoneNo = findViewById(R.id.profile_phone);
-        UpdateSellButton = findViewById(R.id.profile_sell_button);
+        UserName = findViewById(R.id.dealerprofile_username2);
+        FullName = findViewById(R.id.dealerprofile_fullname2);
+        Address = findViewById(R.id.dealerprofile_address2);
+        PhoneNo = findViewById(R.id.dealerprofile_phone2);
+        UpdateSellButton = findViewById(R.id.dealerprofile_sell_button);
 
 
-        UserName1 = findViewById(R.id.profile_username1);
-        FullName1 = findViewById(R.id.profile_fullname1);
-        Address1 = findViewById(R.id.profile_address1);
-        PhoneNo1 = findViewById(R.id.profile_phone1);
-        UpdateProfileButton = findViewById(R.id.profile_update_button);
+        UserName1 = findViewById(R.id.dealerprofile_username);
+        FullName1 = findViewById(R.id.dealerprofile_fullname);
+        Address1 = findViewById(R.id.dealerprofile_address);
+        PhoneNo1 = findViewById(R.id.dealerprofile_phone);
 
-        UserName1.setVisibility(View.GONE);
-        FullName1.setVisibility(View.GONE);
-        Address1.setVisibility(View.GONE);
-        PhoneNo1.setVisibility(View.GONE);
-        UpdateProfileButton.setVisibility(View.GONE);
+
+
+
 
         mAuth = FirebaseAuth.getInstance();
         CurrentUserID = mAuth.getCurrentUser().getUid();
@@ -138,23 +133,14 @@ public class DealerDataAddingActivity extends AppCompatActivity {
                     }
                 });
 
+
         UpdateSellButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                UserName1.setVisibility(View.VISIBLE);
-                FullName1.setVisibility(View.VISIBLE);
-                Address1.setVisibility(View.VISIBLE);
-                PhoneNo1.setVisibility(View.VISIBLE);
-                UpdateProfileButton.setVisibility(View.VISIBLE);
-
-
-            }
-        });
-
-        UpdateProfileButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
                 updateProfile();
+
+                Intent intent = new Intent(DealerDataAddingActivity.this,DealerMainActivity.class);
+                startActivity(intent);
             }
         });
     }
