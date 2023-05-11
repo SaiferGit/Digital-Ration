@@ -1,6 +1,6 @@
 # Digital-Ration
 
-## An application idea of serving Government Rations to users where nearest manager can see if the sellers are selling all the ration things in accurate price. This idea was being presented at "Sylhet Digital Mela 2017" which was organized by Deputy Commissioner Office, Sylhet and won the champion award.
+<b><u>Short Overview:</u></b> An application idea of serving Government Rations to users where nearest manager can see if the sellers are selling all the ration things in accurate price. This idea was being presented at "Sylhet Digital Mela 2017" which was organized by Deputy Commissioner Office, Sylhet and won the champion award.
 
 # <a name="_a934hk2e7d2e"></a><a name="_ydvv1pq6ybog"></a><a name="_au51mny0sx6"></a>**Overview**
 ` `দারিদ্রতা মোকাবিলা বাংলাদেশ সরকারের জন্যে অন্যতমও বড় চ্যালেঞ্জ। " ক্ষুধার্ত থাকবে না একটি মুখ-ও" এ ধরণের একটি প্রকল্পের জন্যে সরকার বিভিন্ন সময়ই অতিদরিদ্যদের জন্যে স্বল্প মূল্যে খাদ্য বিতরণ করে থাকে। কর্মসূচীটি চালু থাকলেও সঠিক মনিটরিং এর অভাবে অতিদরিদ্রদের সাথে সর্বশ্রেণির মানুষেরাই এই সুবিধা ভোগ করছেন। অনেকসময় অতিদরিদ্র অর্থাৎ যাদের জন্যে কর্মসূচীটি চালু করা, তারাই বঞ্চিত হচ্ছেন।
